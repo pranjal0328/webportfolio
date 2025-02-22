@@ -167,6 +167,17 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script>
+				document.addEventListener("DOMContentLoaded", function() {
+					// Select all links in the document
+					document.querySelectorAll('a').forEach(link => {
+						// Check if the link is external
+						if (link.hostname && link.hostname !== window.location.hostname) {
+							link.setAttribute("target", "_blank");
+							link.setAttribute("rel", "noopener noreferrer"); // Security best practice
+						}
+					});
+				});
+			</script>
 	</body>
 </html> 
